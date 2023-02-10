@@ -4,12 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+declare var _LIFERAY_PARAMS_: {
+  configuration: {
+    system: Record<string, string>;
+    portletInstance: Record<string, string>;
+  };
+  contextPath: string;
+  portletElementId: string;
+  portletNamespace: string;
+};
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App params={_LIFERAY_PARAMS_} />
   </React.StrictMode>
 );
 
